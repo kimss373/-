@@ -1,0 +1,5 @@
+numbers=list(map(int, input().split()))
+numbers.sort()
+numbers.pop(0)
+numbers.pop(1)
+print(numbers[0])
