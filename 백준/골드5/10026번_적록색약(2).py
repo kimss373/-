@@ -18,14 +18,13 @@ for i in range(n):
         if visit[i][j] == 0:
             visit[i][j] = 1
             cnt += 1
-            color = paint[i][j]
             q.append([i, j])
             while q:
                 x, y = q.popleft()
                 for k in range(4):
                     nx = x + dx[k]
                     ny = y + dy[k]
-                    if 0<= nx < n and 0<= ny < n and paint[nx][ny] == color and visit[nx][ny] == 0:
+                    if 0<= nx < n and 0<= ny < n and paint[nx][ny] == paint[x][y] and visit[nx][ny] == 0:
                         visit[nx][ny] = 1
                         q.append([nx, ny])
 
@@ -45,13 +44,13 @@ for i in range(n):
                         elif 0<= nx < n and 0<= ny < n and paint[nx][ny] == 'G' and blind_visit[nx][ny] == 0:
                             blind_visit[nx][ny] = 1
                             q.append([nx, ny])
-            elif paint[i][j] == 'B':
+            else:
                 while q:
                     x, y = q.popleft()
                     for v in range(4):
                         nx = x + dx[v]
                         ny = y + dy[v]
-                        if 0 <= nx < n and 0 <= ny < n and paint[nx][ny] == 'B' and blind_visit[nx][ny] == 0:
+                        if 0 <= nx < n and 0 <= ny < n and paint[nx][ny] == paint[x][y] and blind_visit[nx][ny] == 0:
                             blind_visit[nx][ny] = 1
                             q.append([nx, ny])
 print(cnt, blind_cnt)
