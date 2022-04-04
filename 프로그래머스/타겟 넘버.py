@@ -4,7 +4,7 @@ plusminus = ['+', '-']
 def solution(numbers, target):
     a = list(product(plusminus, repeat = len(numbers)))
     answer = 0
-    for i in sorted(a):
+    for i in a:
         num = 0
         for j in range(len(numbers)):
             if i[j] == '+':
