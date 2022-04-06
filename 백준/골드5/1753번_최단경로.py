@@ -15,14 +15,14 @@ for _ in range(e):
 
 dp[k] = 0
 heappush(heap, [0, k])
-while heap:    # heap
+while heap:
     x, y = heappop(heap)
     for n_n, wei in graph[y]:
         n_w = wei + x
         if n_w < dp[n_n]:
             dp[n_n] = n_w
             heappush(heap, [n_w, n_n])
-[inf, 0, 2, 3, 7, inf]
+
 
 for i in dp[1:]:
     if i != inf:
