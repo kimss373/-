@@ -1,7 +1,12 @@
 n, m = map(int, input().split())
 r, c, d = map(int, input().split())
 
-dxy = [[0, -1], [1, 0], [0, 1], [-1, 0]]
+dxyz = [[[0, -1], [1, 0], [0, 1], [-1, 0]], [[0, 1], [-1, 0], [0, -1], [1, 0]]]
+if d%2 == 0:
+    dxy = dxyz[0]
+else:
+    dxy = dxyz[1]
+
 room = []
 for _ in range(n):
     row = list(map(int, input().split()))
@@ -22,6 +27,7 @@ while True:
         c = ny
         cnt += 1
         bcnt = 0
+
 
     else:
         bcnt+=1
