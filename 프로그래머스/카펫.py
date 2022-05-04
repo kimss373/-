@@ -1,7 +1,6 @@
 def solution(brown, yellow):
     answer = []
 
-
     while True:
         height = 1
         if yellow % height == 0:
