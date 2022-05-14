@@ -1,7 +1,9 @@
 def solution(num):
     answer = 0
+
     if num == 1:
         return answer
+
     while True:
         if num % 2 == 0:
             num = num // 2
